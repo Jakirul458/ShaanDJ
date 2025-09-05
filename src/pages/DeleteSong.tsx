@@ -1,6 +1,5 @@
 import { useState } from "react";
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
+
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -30,7 +29,7 @@ const DeleteSong = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      <Header />
+
       <main className="pt-20 pb-16">
         <div className="container mx-auto px-4">
           <div className="min-h-[80vh] flex items-center justify-center">
@@ -71,7 +70,7 @@ const DeleteSong = () => {
           </div>
         </div>
       </main>
-      <Footer />
+
     </div>
   );
 };

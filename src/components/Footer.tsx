@@ -1,48 +1,56 @@
+import React from "react";
 import { Link } from "react-router-dom";
 import { Music, Youtube, Instagram, Facebook, Twitter } from "lucide-react";
-
 import { FaSpotify, FaAmazon, FaMusic, FaBolt } from "react-icons/fa";
 
+interface FooterLink {
+  name: string;
+  href: string;
+  external?: boolean;
+}
 
-const Footer = () => {
-  const currentYear = new Date().getFullYear();
-
-  const footerLinks = {
-    "Quick Links": [
-      { name: "Home", href: "/" },
-      { name: "Videos", href: "/videos" },
-      { name: "About", href: "/about" },
-      { name: "Contact", href: "/contact" },
-    ],
-    Legal: [
-      { name: "Terms of Service", href: "#" },
-      { name: "Privacy Policy", href: "#" },
-      { name: "Copyright", href: "#" },
-      { name: "Licensing", href: "#" },
-    ],
-    Support: [
-      { name: "Help Center", href: "#" },
-      { name: "Community", href: "#" },
-      { name: "Feedback", href: "#" },
-      { name: "Report Issue", href: "#" },
-    ],
-  };
+const footerLinks: Record<string, FooterLink[]> = {
+  "Quick Links": [
+    { name: "Home", href: "/" },
+    { name: "Videos", href: "/videos" },
+    { name: "About", href: "/about" },
+    { name: "Audio", href: "/audio" },
+    { name: "Contact", href: "/contact" },
+    { name: "Albums", href: "/albums" },
+    { name: "Purchases", href: "/purchases" },
+  ],
+  Legal: [
+    { name: "Terms and Conditions", href: "/terms-of-service", external: true },
+    { name: "Privacy Policy", href: "/privacy-policy", external: true },
+    { name: "Copyright", href: "#" },
+    { name: "Licensing", href: "#" },
+  ],
+  Support: [
+    { name: "Help Center", href: "/contact" },
+    { name: "Community", href: "#" },
+    { name: "Feedback", href: "#" },
+    { name: "Report Issue", href: "#" },
+  ],
+ 
+};
 
 const socialLinks = [
   { name: "YouTube", icon: Youtube, href: "https://youtube.com/@vdjshanaofficial", color: "hover:text-red-500" },
   { name: "Instagram", icon: Instagram, href: "https://www.instagram.com/_alan_jacky_", color: "hover:text-pink-500" },
   { name: "Facebook", icon: Facebook, href: "https://www.facebook.com/share/1CZrWf4pcy/", color: "hover:text-blue-500" },
   { name: "Twitter", icon: Twitter, href: "https://x.com/JakirulSk60351", color: "hover:text-blue-400" },
-  { name: "Spotify", icon: FaSpotify, href: "open.spotify.com/artist/1AElbGTdtp3Uly2j6U4JpX", color: "hover:text-green-500" },
-  { name: "Amazon Music", icon: FaAmazon, href: "https://music.amazon.com/artists/B09WB5RTJY/vdj-shana?marketplaceId=A3K6Y4MI8GDYMT&musicTerritory=IN&ref=dm_sh_gKFAK6KJu9O0vTVqCAglEnsE4", color: "hover:text-indigo-500" },
-  { name: "Resso", icon: FaMusic, href: "m.resso.com/ZSdnuQxyo", color: "hover:text-pink-600" },   
-  { name: "Shazam", icon: FaBolt, href: "shazam.com/amp/track/619347994/let-me-down-x-rendu-kaadhal-lofi-mix", color: "hover:text-blue-600" }, 
+  { name: "Spotify", icon: FaSpotify, href: "https://open.spotify.com/artist/1AElbGTdtp3Uly2j6U4JpX", color: "hover:text-green-500" },
+  { name: "Amazon Music", icon: FaAmazon, href: "https://music.amazon.com/artists/B09WB5RTJY/vdj-shana", color: "hover:text-indigo-500" },
+  { name: "Resso", icon: FaMusic, href: "https://m.resso.com/ZSdnuQxyo", color: "hover:text-pink-600" },
+  { name: "Shazam", icon: FaBolt, href: "https://www.shazam.com/amp/track/619347994/let-me-down-x-rendu-kaadhal-lofi-mix", color: "hover:text-blue-600" },
 ];
+
+const Footer: React.FC = () => {
+  const currentYear = new Date().getFullYear();
 
   return (
     <footer className="bg-card/30 backdrop-blur-sm border-t border-primary/20 relative">
-      {/* Background effects */}
-      <div className="absolute inset-0 bg-gradient-to-t from-background/50 to-transparent"></div>
+      <div className="absolute inset-0 bg-gradient-to-t from-background/50 to-transparent" />
 
       <div className="container mx-auto px-4 py-16 relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
@@ -52,11 +60,8 @@ const socialLinks = [
               <div className="w-10 h-10 bg-gradient-to-r from-primary to-secondary rounded-lg flex items-center justify-center glow">
                 <Music className="h-6 w-6 text-background" />
               </div>
-              <div className="text-2xl font-bold text-neon animate-glow">
-                vdj shana
-              </div>
+              <div className="text-2xl font-bold text-neon animate-glow">vdj Shaan</div>
             </Link>
-
             <p className="text-muted-foreground mb-6 leading-relaxed">
               Creating amazing mashup experiences across multiple languages.
               Your mood, my songs - bringing you the perfect blend of traditional and modern music.
@@ -85,18 +90,25 @@ const socialLinks = [
           {/* Footer Links */}
           {Object.entries(footerLinks).map(([category, links]) => (
             <div key={category}>
-              <h3 className="text-lg font-semibold text-foreground mb-6">
-                {category}
-              </h3>
+              <h3 className="text-lg font-semibold text-foreground mb-6">{category}</h3>
               <ul className="space-y-4">
                 {links.map((link) => (
                   <li key={link.name}>
-                    <Link
-                      to={link.href}
-                      className="text-muted-foreground hover:text-primary transition-colors duration-300"
-                    >
-                      {link.name}
-                    </Link>
+                    {link.external ? (
+                      <a
+                        href={link.href}
+                        className="text-muted-foreground hover:text-primary transition-colors duration-300"
+                      >
+                        {link.name}
+                      </a>
+                    ) : (
+                      <Link
+                        to={link.href}
+                        className="text-muted-foreground hover:text-primary transition-colors duration-300"
+                      >
+                        {link.name}
+                      </Link>
+                    )}
                   </li>
                 ))}
               </ul>
@@ -132,9 +144,9 @@ const socialLinks = [
         {/* Copyright */}
         <div className="mt-12 pt-8 border-t border-primary/20">
           <div className="flex flex-col md:flex-row justify-between items-center text-sm text-muted-foreground">
-            <p>&copy; {currentYear} vdj shana &nbsp;&nbsp;&nbsp;All rights reserved.</p>
+            <p>&copy; {currentYear} vdj Shaan &nbsp;&nbsp;&nbsp;All rights reserved.</p>
             <p className="text-gray-300">
-              Developed by:{" "}
+              Developed by{" "}
               <a
                 href="https://jakirulsk.vercel.app/"
                 target="_blank"

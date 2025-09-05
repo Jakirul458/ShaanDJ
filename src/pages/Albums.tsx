@@ -845,7 +845,7 @@ const Albums = () => {
       const res = await api.get("/albums");
       const albumsData = res.data.data || res.data.albums || [];
       setAlbums(albumsData);
-    } catch (err: unknown) {
+    } catch (err) {
       setError(err?.response?.data?.message || "Failed to load albums.");
     } finally {
       setLoading(false);
@@ -875,7 +875,7 @@ const Albums = () => {
 
       document.body.appendChild(form);
       form.submit();
-    } catch (err: unknown) {
+    } catch (err) {
       console.error("Order creation failed:", err);
       alert(err?.response?.data?.message || "Failed to create order. Please try again.");
     } finally {

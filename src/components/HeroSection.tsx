@@ -56,11 +56,11 @@ const HeroSection = () => {
       <div className="relative z-10 text-center px-4 max-w-6xl mx-auto">
         {/* Title */}
         <h1 className="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-10 mb-6">
-          <img src="/logo.svg" alt="VDJ Shana Logo" className="h-20 w-20 md:h-28 lg:h-48 object-contain animate-glow" />
+          <img src="/logo.svg" alt="VDJ shaan Logo" className="h-20 w-20 md:h-28 lg:h-48 object-contain animate-glow" />
           <span className="text-4xl md:text-6xl lg:text-7xl font-bold text-neon animate-glow mt-2 md:mt-0">
-            VDJ Shana
+            VDJ Shaan
           </span>
-          <img src="/logo.svg" alt="VDJ Shana Logo" className="h-20 w-20 md:h-28 lg:h-48 object-contain animate-glow" />
+          <img src="/logo.svg" alt="VDJ shaan Logo" className="h-20 w-20 md:h-28 lg:h-48 object-contain animate-glow" />
         </h1>
 
         <h2 className="text-foreground text-lg md:text-2xl mt-2">
@@ -76,7 +76,7 @@ const HeroSection = () => {
         <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center mb-12">
           <Button
             size="lg"
-            onClick={() => window.open("https://youtube.com/@vdjshanaofficial", "_blank")}
+            onClick={() => window.open("https://youtube.com/@vdjshaanofficial", "_blank")}
             className="bg-gradient-to-r from-primary to-secondary hover:from-primary/80 hover:to-secondary/80 text-lg px-6 py-4 animate-pulse-glow transform hover:scale-105 transition-all duration-300 w-full sm:w-auto"
           >
             <Play className="mr-2 h-6 w-6" />

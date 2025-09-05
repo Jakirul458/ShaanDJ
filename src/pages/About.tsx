@@ -41,7 +41,7 @@ const About = () => {
           <div className="text-center mb-16">
             <h1 className="text-4xl md:text-6xl font-bold mb-6">
               <span className="text-foreground">About</span>{" "}
-              <span className="text-neon animate-glow">VDJ Shana</span>
+              <span className="text-neon animate-glow">VDJ Shaan</span>
             </h1>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
               Passionate music creator bringing you the best mashups across multiple languages
@@ -54,7 +54,7 @@ const About = () => {
               <CardContent className="p-8 md:p-12">
                 <div className="space-y-6 text-lg leading-relaxed">
                   <p className="text-foreground">
-                    Welcome to the world of <span className="text-primary font-semibold">VDJ Shana</span>, 
+                    Welcome to the world of <span className="text-primary font-semibold">VDJ Shaan</span>, 
                     where music transcends boundaries and cultures unite through rhythm and melody. 
                     I am a passionate music creator dedicated to bringing you the most amazing mashup 
                     experiences across multiple languages.

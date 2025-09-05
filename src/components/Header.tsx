@@ -33,7 +33,7 @@ const Header = () => {
               className="h-16 w-16 object-contain"
             />
             <span className="text-3xl font-bold text-neon animate-glow hover:scale-105 transition-transform duration-300">
-              VDJ Shana
+              VDJ Shaan
             </span>
           </Link>
 

@@ -18,6 +18,9 @@ import Login from "./pages/Login";
 import Register from "./pages/Register";
 import Albums from "./pages/Albums";
 import Purchases from "./pages/Purchases";
+import TermsOfService from "@/pages/TermsCondition";
+import PrivacyPolicy from "@/pages/PrivacyPolicy";
+import ScrollToTop from "@/components/ScrollToTop";
 
 const queryClient = new QueryClient();
 
@@ -27,6 +30,7 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
+        <ScrollToTop />
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/videos" element={<Videos />} />
@@ -49,6 +53,9 @@ const App = () => (
 
           {/* Fallback */}
           <Route path="*" element={<NotFound />} />
+          {/* Footer Route */}
+          <Route path="/terms-of-service" element={<TermsOfService />} />
+          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
         </Routes>
 
       </BrowserRouter>

@@ -31,19 +31,19 @@ const Contact = () => {
     {
       icon: Mail,
       title: "Email",
-      detail: "vdjshana@music.com",
+      detail: "jakirulsk312@gmail.com",
       color: "text-primary"
     },
     {
       icon: Phone,
       title: "Phone",
-      detail: "+91 98765 43210",
+      detail: "+91 9999999999",
       color: "text-secondary"
     },
     {
       icon: MapPin,
       title: "Location",
-      detail: "Mumbai, India",
+      detail: "Kolkata, India",
       color: "text-accent"
     }
   ];

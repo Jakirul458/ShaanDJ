@@ -43,7 +43,7 @@ const Purchases = () => {
       if (response.success) {
         setOrders(response.data);
       }
-    } catch (error: any) {
+    } catch (error: unknown) {
       toast({
         variant: "destructive",
         title: "Error",
@@ -66,7 +66,7 @@ const Purchases = () => {
           description: "Your album download has been initiated."
         });
       }
-    } catch (error: any) {
+    } catch (error: unknown) {
       toast({
         variant: "destructive",
         title: "Download Error",

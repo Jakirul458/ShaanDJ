@@ -9,10 +9,13 @@ const Header = () => {
 
   const navItems = [
     { name: "Home", path: "/" },
+    { name: "Albums", path: "/albums" },
     { name: "Videos", path: "/videos" },
     { name: "About", path: "/about" },
     { name: "Audio", path: "/audio" },
     { name: "Contact", path: "/contact" },
+    { name: "Purchases", path: "/purchases" },
+      { name: "Login", path: "/login" },
     { name: "Admin", path: "/admin" },
   ];
 
@@ -24,15 +27,15 @@ const Header = () => {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-3">
-  <img
-    src="/logo.svg"
-    alt="VDJ Shana Logo"
-    className="h-16 w-16 object-contain" 
-  />
-  <span className="text-3xl font-bold text-neon animate-glow hover:scale-105 transition-transform duration-300">
-    VDJ Shana
-  </span>
-</Link>
+            <img
+              src="/logo.svg"
+              alt="VDJ Shana Logo"
+              className="h-16 w-16 object-contain"
+            />
+            <span className="text-3xl font-bold text-neon animate-glow hover:scale-105 transition-transform duration-300">
+              VDJ Shana
+            </span>
+          </Link>
 
 
           {/* Desktop Navigation */}
@@ -41,11 +44,10 @@ const Header = () => {
               <Link
                 key={item.name}
                 to={item.path}
-                className={`text-sm font-medium transition-colors duration-300 hover:text-primary ${
-                  isActive(item.path)
+                className={`text-sm font-medium transition-colors duration-300 hover:text-primary ${isActive(item.path)
                     ? "text-primary glow"
                     : "text-muted-foreground"
-                }`}
+                  }`}
               >
                 {item.name}
               </Link>
@@ -70,11 +72,10 @@ const Header = () => {
               <Link
                 key={item.name}
                 to={item.path}
-                className={`block py-2 px-3 rounded-md text-sm font-medium transition-colors duration-300 ${
-                  isActive(item.path)
+                className={`block py-2 px-3 rounded-md text-sm font-medium transition-colors duration-300 ${isActive(item.path)
                     ? "bg-primary/20 text-primary"
                     : "text-muted-foreground hover:text-primary hover:bg-muted"
-                }`}
+                  }`}
                 onClick={() => setIsMenuOpen(false)}
               >
                 {item.name}

@@ -56,7 +56,7 @@ const AlbumManagement = () => {
           driveFileId: ""
         });
       }
-    } catch (error: any) {
+    } catch (error) {
       toast({
         variant: "destructive",
         title: "Error",

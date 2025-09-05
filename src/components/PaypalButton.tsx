@@ -2,14 +2,16 @@ import { useEffect, useRef } from "react";
 
 interface PaypalButtonProps {
   orderId: string;
-  onApprove: (data: any) => void;
-  onError?: (error: any) => void;
+  onApprove: (data: unknown) => void;
+  onError?: (error: unknown) => void;
   onCancel?: () => void;
 }
 
 declare global {
   interface Window {
-    paypal: any;
+    paypal: {
+      Buttons: (options: unknown) => { render: (container: HTMLElement) => void };
+    };
   }
 }
 
@@ -27,10 +29,10 @@ const PaypalButton = ({ orderId, onApprove, onError, onCancel }: PaypalButtonPro
         window.paypal
           .Buttons({
             createOrder: () => orderId,
-            onApprove: (data: any) => {
+            onApprove: (data: unknown) => {
               onApprove(data);
             },
-            onError: (err: any) => {
+            onError: (err: unknown) => {
               console.error("PayPal error:", err);
               if (onError) onError(err);
             },

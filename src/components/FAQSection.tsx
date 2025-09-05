@@ -1,36 +1,37 @@
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import { motion } from "framer-motion";
+import { useNavigate } from "react-router-dom";
 
 const FAQSection = () => {
   const faqs = [
     {
-      question: "What type of music does VDJ Shana create?",
-      answer: "VDJ Shana specializes in mashup songs across multiple languages including Bengali, Hindi, English, and Bhojpuri. Each track is carefully crafted to blend traditional melodies with modern production techniques."
+      question: "What kind of tracks does VDJ Shaan drop?",
+      answer: "VDJ Shaan spins high-energy mashups across multiple languages—Bengali, Hindi, English, and Bhojpuri. Each track is crafted to make you dance while blending classic melodies with modern beats."
     },
     {
-      question: "How often are new songs released?",
-      answer: "We release new mashup tracks weekly! Our goal is to keep the content fresh and exciting for our listeners. Subscribe to our channel to get notified about the latest releases."
+      question: "How often do you release new mixes?",
+      answer: "Fresh vibes every week! Subscribe to catch the latest mashups and exclusive edits before anyone else."
     },
     {
-      question: "Can I request a specific song for mashup?",
-      answer: "Absolutely! We love hearing from our fans. You can submit song requests through our contact page, and we'll consider them for future mashup projects."
+      question: "Can I request a track to be mashed up?",
+      answer: "Absolutely! Hit us up through the contact page with your song ideas and your request might just appear in the next mix."
     },
     {
-      question: "Are the songs available for download?",
-      answer: "Currently, our songs are available for streaming on YouTube. We're working on making them available on other platforms soon. Stay tuned for updates!"
+      question: "Are your tracks available for download?",
+      answer: "Right now, you can stream all tracks on YouTube. We’re cooking up options on other platforms too—stay tuned for updates!"
     },
     {
-      question: "Do you collaborate with other artists?",
-      answer: "Yes! We're always open to collaborating with talented artists and musicians. If you're interested in working with us, please reach out through our contact page."
+      question: "Do you collaborate with other DJs or artists?",
+      answer: "Yes! VDJ Shaan loves collabs. If you’re a DJ, producer, or artist, drop a message through the contact page and let’s make magic together."
     },
     {
-      question: "What makes VDJ Shana's mashups unique?",
-      answer: "Our mashups stand out because of their seamless blend of different musical cultures, high-quality production, and creative arrangements that respect the original songs while adding a fresh contemporary twist."
+      question: "What makes VDJ Shaan’s mashups stand out?",
+      answer: "It’s all about the vibe. Smoothly blending multiple genres, languages, and styles, every mashup keeps the energy high and respects the original tracks while adding a signature spin."
     }
   ];
 
   return (
     <section className="py-24 relative">
-      {/* Background effects */}
       <div className="absolute inset-0 bg-gradient-to-b from-background via-muted/10 to-background"></div>
       
       <div className="container mx-auto px-4 relative z-10">
@@ -40,7 +41,7 @@ const FAQSection = () => {
             <span className="text-neon animate-glow">Questions</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Got questions? We've got answers! Find everything you need to know about VDJ Shana.
+            Got questions? We've got answers! Find everything you need to know about VDJ Shaan.
           </p>
         </div>
 
@@ -50,14 +51,22 @@ const FAQSection = () => {
               <AccordionItem 
                 key={index} 
                 value={`item-${index}`}
-                className="bg-card/30 backdrop-blur-sm border border-primary/20 rounded-lg px-6 hover:border-primary/50 transition-all duration-300 animate-float"
-                style={{ animationDelay: `${index * 0.1}s` }}
+                className="bg-card/30 backdrop-blur-sm border border-primary/20 rounded-lg px-6 hover:border-primary/50 transition-all duration-300"
               >
                 <AccordionTrigger className="text-left text-lg font-medium text-foreground hover:text-primary transition-colors duration-300 py-6">
                   {faq.question}
                 </AccordionTrigger>
+
+                {/* Animated content */}
                 <AccordionContent className="text-muted-foreground leading-relaxed pb-6">
-                  {faq.answer}
+                  <motion.div
+                    initial={{ opacity: 0, scale: 0.95 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    exit={{ opacity: 0, scale: 0.95 }}
+                    transition={{ duration: 0.25 }}
+                  >
+                    {faq.answer}
+                  </motion.div>
                 </AccordionContent>
               </AccordionItem>
             ))}
@@ -71,14 +80,15 @@ const FAQSection = () => {
               Still have questions?
             </h3>
             <p className="text-muted-foreground mb-6">
-              Can't find the answer you're looking for? Feel free to reach out to us directly.
+              Can't find the answer you're looking for? Reach out or join the party!
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              
               <button className="px-8 py-3 bg-primary text-primary-foreground rounded-lg font-medium hover:bg-primary/90 transition-colors duration-300 glow">
-                Contact Us
+                Hit Me Up
               </button>
               <button className="px-8 py-3 border border-primary text-primary rounded-lg font-medium hover:bg-primary/10 transition-colors duration-300">
-                Join Community
+                Join the Party
               </button>
             </div>
           </div>

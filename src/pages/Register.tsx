@@ -42,7 +42,7 @@ const Register = () => {
         
         navigate("/albums");
       }
-    } catch (error: any) {
+    } catch (error) {
       toast({
         variant: "destructive",
         title: "Error",

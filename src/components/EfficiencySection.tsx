@@ -44,11 +44,14 @@ const EfficiencySection = () => {
             <div className="flex flex-wrap gap-4">
               <Button 
                 size="lg"
+                onClick={() => window.open("https://www.youtube.com/@vdjshaan", "_blank")}
                 className="bg-gradient-to-r from-primary to-secondary hover:from-primary/80 hover:to-secondary/80 animate-pulse-glow"
               >
                 <Music className="mr-2 h-5 w-5" />
                 Explore Now
               </Button>
+
+              
               
               <Button 
                 variant="outline" 
@@ -98,7 +101,7 @@ const EfficiencySection = () => {
             },
             {
               title: "Regular Updates",
-              description: "New mashups added weekly",
+              description: "New DJ added weekly",
               icon: "🔄"
             },
             {

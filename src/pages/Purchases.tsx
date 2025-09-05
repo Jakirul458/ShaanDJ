@@ -6,6 +6,8 @@ import { useToast } from "@/hooks/use-toast";
 import { getMyOrders, downloadAlbum } from "@/lib/api";
 import { Link, useNavigate } from "react-router-dom";
 import { ArrowLeft, Download, Clock, Music } from "lucide-react";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 
 type Order = {
   _id: string;
@@ -66,7 +68,7 @@ const Purchases = () => {
           description: "Your album download has been initiated."
         });
       }
-    } catch (error: unknown) {
+    } catch (error) {
       toast({
         variant: "destructive",
         title: "Download Error",
@@ -86,6 +88,8 @@ const Purchases = () => {
   }
 
   return (
+    <>
+    <Header/>
     <div className="min-h-screen bg-gradient-to-br from-background to-muted">
       {/* Header */}
       <header className="border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
@@ -180,6 +184,8 @@ const Purchases = () => {
         )}
       </main>
     </div>
+    <Footer/>
+    </> 
   );
 };
 

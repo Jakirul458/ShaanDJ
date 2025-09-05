@@ -1,46 +1,9 @@
-// import axios, { AxiosInstance } from "axios";
-
-// const api: AxiosInstance = axios.create({
-//   baseURL: import.meta.env.VITE_API_URL || "http://localhost:5000", // base url শুধু .env থেকে আসবে
-//   timeout: 3 * 60 * 1000,
-//   withCredentials: true,
-//   headers: {
-//     "Content-Type": "application/json",
-//   },
-// });
-
-// export default api;
-
-
-
-// // src/api.ts
-// import axios from "axios";
-
-// const api = axios.create({
-//   baseURL: "https://vdjshana.onrender.com/api",
-//   headers: {
-//     "Content-Type": "application/json",
-//   },
-// });
-
-// // ✅ Automatically token attach
-// api.interceptors.request.use((config) => {
-//   const token = localStorage.getItem("token");
-//   if (token) {
-//     config.headers.Authorization = `Bearer ${token}`;
-//   }
-//   return config;
-// });
-
-// export default api;
-
-
-
 
 import axios from "axios";
 
+// Use VITE_API_URL from environment variables
 const api = axios.create({
-  baseURL: "https://shaandj-backend.onrender.com/api",
+  baseURL: import.meta.env.VITE_API_URL + "/api",
   headers: {
     "Content-Type": "application/json",
   },
@@ -179,3 +142,5 @@ export const downloadAlbum = async (albumId: string) => {
   const res = await api.get(`/download/${albumId}`);
   return res.data;
 };
+
+

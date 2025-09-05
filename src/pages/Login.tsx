@@ -6,6 +6,8 @@ import { Label } from "@/components/ui/label";
 import { loginUser } from "@/lib/api";
 import { useToast } from "@/hooks/use-toast";
 import { Link, useNavigate } from "react-router-dom";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 
 const Login = () => {
   const [formData, setFormData] = useState({
@@ -41,7 +43,7 @@ const Login = () => {
         
         navigate("/albums");
       }
-    } catch (error: unknown) {
+    } catch (error) {
       toast({
         variant: "destructive",
         title: "Error",
@@ -53,6 +55,8 @@ const Login = () => {
   };
 
   return (
+    <> 
+    <Header/>
     <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-background to-muted p-4">
       <Card className="w-full max-w-md">
         <CardHeader className="space-y-1">
@@ -103,6 +107,8 @@ const Login = () => {
         </CardContent>
       </Card>
     </div>
+    <Footer/>
+    </>
   );
 };
 

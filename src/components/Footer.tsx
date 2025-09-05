@@ -15,7 +15,6 @@ const footerLinks: Record<string, FooterLink[]> = {
     { name: "Videos", href: "/videos" },
     { name: "About", href: "/about" },
     { name: "Audio", href: "/audio" },
-    { name: "Contact", href: "/contact" },
     { name: "Albums", href: "/albums" },
     { name: "Purchases", href: "/purchases" },
   ],

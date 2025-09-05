@@ -76,7 +76,7 @@ const HeroSection = () => {
         <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center mb-12">
           <Button
             size="lg"
-            onClick={() => window.open("https://youtube.com/@vdjshaanofficial", "_blank")}
+            onClick={() => window.open("https://www.youtube.com/@vdjshaan", "_blank")}
             className="bg-gradient-to-r from-primary to-secondary hover:from-primary/80 hover:to-secondary/80 text-lg px-6 py-4 animate-pulse-glow transform hover:scale-105 transition-all duration-300 w-full sm:w-auto"
           >
             <Play className="mr-2 h-6 w-6" />

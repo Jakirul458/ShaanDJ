@@ -4,28 +4,28 @@ import { Music2, Heart, Globe, Headphones } from "lucide-react";
 const FeaturesSection = () => {
   const features = [
     {
-      title: "Bengali Mashup Songs",
+      title: "Bengali DJ Songs",
       description: "Soulful Bengali melodies mixed with modern beats",
       icon: Music2,
       gradient: "from-primary to-primary/50",
       glow: "glow",
     },
     {
-      title: "Hindi Mashup Songs", 
+      title: "Hindi DJ Songs", 
       description: "Bollywood classics with contemporary twists",
       icon: Heart,
       gradient: "from-secondary to-secondary/50",
       glow: "glow-purple",
     },
     {
-      title: "English Mashup Songs",
+      title: "English DJ Songs",
       description: "International hits reimagined and remixed",
       icon: Globe,
       gradient: "from-accent to-accent/50",
       glow: "glow-yellow",
     },
     {
-      title: "Bhojpuri Mashup Songs",
+      title: "Bhojpuri DJ Songs",
       description: "Traditional Bhojpuri music with modern production",
       icon: Headphones,
       gradient: "from-neon-blue to-neon-pink",

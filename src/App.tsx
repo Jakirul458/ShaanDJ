@@ -21,6 +21,7 @@ import Purchases from "./pages/Purchases";
 import TermsOfService from "@/pages/TermsCondition";
 import PrivacyPolicy from "@/pages/PrivacyPolicy";
 import ScrollToTop from "@/components/ScrollToTop";
+import Events from "./pages/Events";
 
 const queryClient = new QueryClient();
 
@@ -37,6 +38,8 @@ const App = () => (
           <Route path="/about" element={<About />} />
           <Route path="/audio" element={<Audio />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/events" element={<Events />} />
+          
 
           {/* User Authentication & Albums */}
           <Route path="/login" element={<Login />} />

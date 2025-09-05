@@ -16,11 +16,11 @@ const footerLinks: Record<string, FooterLink[]> = {
     { name: "About", href: "/about" },
     { name: "Audio", href: "/audio" },
     { name: "Albums", href: "/albums" },
-    { name: "Purchases", href: "/purchases" },
+   
   ],
   Legal: [
-    { name: "Terms and Conditions", href: "/terms-of-service", external: true },
-    { name: "Privacy Policy", href: "/privacy-policy", external: true },
+    { name: "Terms and Conditions", href: "/terms-of-service" },
+    { name: "Privacy Policy", href: "/privacy-policy"},
     { name: "Copyright", href: "#" },
     { name: "Licensing", href: "#" },
   ],

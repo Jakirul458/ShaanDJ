@@ -61,6 +61,14 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
+				},
+				// Neon colors for futuristic theme
+				neon: {
+					green: 'hsl(120 100% 50%)',
+					purple: 'hsl(280 100% 70%)',
+					yellow: 'hsl(60 100% 50%)',
+					blue: 'hsl(200 100% 60%)',
+					pink: 'hsl(320 100% 70%)'
 				}
 			},
 			borderRadius: {
@@ -88,7 +96,12 @@ export default {
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				'float': 'float 3s ease-in-out infinite',
+				'pulse-glow': 'pulse-glow 2s ease-in-out infinite',
+				'glow': 'glow 2s ease-in-out infinite alternate',
+				'slide-up': 'slide-up 0.5s ease-out',
+				'fade-in': 'fade-in 0.5s ease-out'
 			}
 		}
 	},

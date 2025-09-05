@@ -14,6 +14,10 @@ import AddSong from "./pages/AddSong";
 import UpdateSong from "./pages/UpdateSong";
 import DeleteSong from "./pages/DeleteSong";
 import Dashboard from "./pages/Dashboard";
+import Login from "./pages/Login";
+import Register from "./pages/Register";
+import Albums from "./pages/Albums";
+import Purchases from "./pages/Purchases";
 
 const queryClient = new QueryClient();
 
@@ -29,6 +33,12 @@ const App = () => (
           <Route path="/about" element={<About />} />
           <Route path="/audio" element={<Audio />} />
           <Route path="/contact" element={<Contact />} />
+
+          {/* User Authentication & Albums */}
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="/albums" element={<Albums />} />
+          <Route path="/purchases" element={<Purchases />} />
 
           {/* Admin */}
           <Route path="/admin" element={<Admin />} />

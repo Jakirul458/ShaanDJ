@@ -65,6 +65,17 @@ export const loginAdmin = async (credentials: { username: string; password: stri
   return res.data;
 };
 
+// User Auth
+export const registerUser = async (userData: { name: string; email: string; password: string }) => {
+  const res = await api.post("/auth/register", userData);
+  return res.data;
+};
+
+export const loginUser = async (credentials: { email: string; password: string }) => {
+  const res = await api.post("/auth/login", credentials);
+  return res.data;
+};
+
 // ===================== //
 // 🔹 Songs CRUD functions
 // ===================== //
@@ -93,5 +104,78 @@ export const updateSong = async (
 // Delete song by ID
 export const deleteSong = async (id: string) => {
   const res = await api.delete(`/songs/${id}`);
+  return res.data;
+};
+
+// ===================== //
+// 🔹 Albums CRUD functions
+// ===================== //
+
+// Get all albums
+export const getAlbums = async () => {
+  const res = await api.get("/albums");
+  return res.data;
+};
+
+// Add new album (Admin only)
+export const addAlbum = async (albumData: { 
+  title: string; 
+  description: string; 
+  duration: string; 
+  price: number; 
+  image: string; 
+  driveFileId: string 
+}) => {
+  const res = await api.post("/albums", albumData);
+  return res.data;
+};
+
+// Update album by ID (Admin only)
+export const updateAlbum = async (
+  id: string,
+  albumData: { 
+    title?: string; 
+    description?: string; 
+    duration?: string; 
+    price?: number; 
+    image?: string; 
+    driveFileId?: string 
+  }
+) => {
+  const res = await api.put(`/albums/${id}`, albumData);
+  return res.data;
+};
+
+// Delete album by ID (Admin only)
+export const deleteAlbum = async (id: string) => {
+  const res = await api.delete(`/albums/${id}`);
+  return res.data;
+};
+
+// ===================== //
+// 🔹 Orders functions
+// ===================== //
+
+// Create PayPal order
+export const createOrder = async (albumId: string) => {
+  const res = await api.post("/orders/create", { albumId });
+  return res.data;
+};
+
+// Capture PayPal order
+export const captureOrder = async (paypalOrderId: string) => {
+  const res = await api.post("/orders/capture", { paypalOrderId });
+  return res.data;
+};
+
+// Get user's orders
+export const getMyOrders = async () => {
+  const res = await api.get("/orders/mine");
+  return res.data;
+};
+
+// Download album
+export const downloadAlbum = async (albumId: string) => {
+  const res = await api.get(`/download/${albumId}`);
   return res.data;
 };

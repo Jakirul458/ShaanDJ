@@ -4,6 +4,10 @@ const mongoose = require("mongoose");
 const cors = require("cors");
 const adminRoutes = require("./routes/admin");
 const songRoutes = require("./routes/song");
+const authRoutes = require("./routes/auth");
+const albumRoutes = require("./routes/album");
+const orderRoutes = require("./routes/order");
+const downloadRoutes = require("./routes/download");
 
 require("dotenv").config();
 
@@ -38,6 +42,10 @@ mongoose.connect(process.env.MONGO_URI, {
 // Routes
 app.use("/api/admin", adminRoutes);
 app.use("/api/songs", songRoutes);
+app.use("/api/auth", authRoutes);
+app.use("/api/albums", albumRoutes);
+app.use("/api/orders", orderRoutes);
+app.use("/api/download", downloadRoutes);
 
 // Health check endpoint
 app.get("/health", (req, res) => {

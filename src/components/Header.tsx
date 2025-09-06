@@ -11,6 +11,7 @@ const Header = () => {
     { name: "Home", path: "/" },
     { name: "Albums", path: "/albums" },
     { name: "Events", path: "/events" },
+      { name: "Gallery", path: "/gallery" },
     { name: "Videos", path: "/videos" },
     { name: "About", path: "/about" },
     { name: "Audio", path: "/audio" },
@@ -18,6 +19,7 @@ const Header = () => {
     { name: "Purchases", path: "/purchases" },
     { name: "Login", path: "/login" },
     { name: "Admin", path: "/admin" },
+  
   ];
 
   const isActive = (path: string) => location.pathname === path;

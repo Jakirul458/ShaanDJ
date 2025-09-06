@@ -259,6 +259,8 @@ import AddSong from "./AddSong";
 import UpdateSong from "./UpdateSong";
 import DeleteSong from "./DeleteSong";
 import ManageAlbums from "./AlbumManagement"; // Combined Upload + Manage Albums
+import EventsManagement from "./EventsManagement";
+import GalleryManagement from "./GalleryManagement";
 
 const Dashboard = () => {
   const [activeTab, setActiveTab] = useState(""); // 🔹 default blank
@@ -269,6 +271,8 @@ const Dashboard = () => {
     { key: "managealbums", label: "Manage Albums", icon: <PlusCircle className="h-5 w-5 mr-2" /> },
     { key: "addSong", label: "Add Song", icon: <PlusCircle className="h-5 w-5 mr-2" /> },
     { key: "delete", label: "Delete Song", icon: <Trash2 className="h-5 w-5 mr-2" /> },
+    { key: "eventsmanagement", label: "Events Management", icon: <Edit className="h-5 w-5 mr-2" /> },
+    { key: "gallerymanagement", label: "Gallery Management", icon: <Edit className="h-5 w-5 mr-2" /> },
   ];
 
   const handleLogout = () => {
@@ -344,6 +348,10 @@ const Dashboard = () => {
               {activeTab === "update" && <UpdateSong />}
               {activeTab === "delete" && <DeleteSong />}
               {activeTab === "managealbums" && <ManageAlbums />}
+              {activeTab === "eventsmanagement" && <EventsManagement />}
+              {activeTab === "gallerymanagement" && <GalleryManagement />}
+
+
             </CardContent>
           </Card>
         </div>

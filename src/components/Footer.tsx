@@ -1,7 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { Music, Youtube, Instagram, Facebook, Twitter } from "lucide-react";
+import { Music, Youtube, Instagram, Facebook, Twitter, } from "lucide-react";
 import { FaSpotify, FaAmazon, FaMusic, FaBolt } from "react-icons/fa";
+import { FaSoundcloud } from "react-icons/fa";
+
 
 interface FooterLink {
   name: string;
@@ -34,14 +36,15 @@ const footerLinks: Record<string, FooterLink[]> = {
 };
 
 const socialLinks = [
-  { name: "YouTube", icon: Youtube, href: "https://youtube.com/@vdjshanaofficial", color: "hover:text-red-500" },
-  { name: "Instagram", icon: Instagram, href: "https://www.instagram.com/_alan_jacky_", color: "hover:text-pink-500" },
-  { name: "Facebook", icon: Facebook, href: "https://www.facebook.com/share/1CZrWf4pcy/", color: "hover:text-blue-500" },
+  { name: "YouTube", icon: Youtube, href: "www.youtube.com/vdjshaan", color: "hover:text-red-500" },
+  { name: "Instagram", icon: Instagram, href: "https://www.instagram.com/vdjshaan", color: "hover:text-pink-500" },
+  { name: "Facebook", icon: Facebook, href: "https://www.facebook.com/vdjshaan.official", color: "hover:text-blue-500" },
   { name: "Twitter", icon: Twitter, href: "https://x.com/JakirulSk60351", color: "hover:text-blue-400" },
-  { name: "Spotify", icon: FaSpotify, href: "https://open.spotify.com/artist/1AElbGTdtp3Uly2j6U4JpX", color: "hover:text-green-500" },
-  { name: "Amazon Music", icon: FaAmazon, href: "https://music.amazon.com/artists/B09WB5RTJY/vdj-shana", color: "hover:text-indigo-500" },
-  { name: "Resso", icon: FaMusic, href: "https://m.resso.com/ZSdnuQxyo", color: "hover:text-pink-600" },
-  { name: "Shazam", icon: FaBolt, href: "https://www.shazam.com/amp/track/619347994/let-me-down-x-rendu-kaadhal-lofi-mix", color: "hover:text-blue-600" },
+  { name: "Spotify", icon: FaSpotify, href: "https://open.spotify.com/artist/7uypXShthkQWrIUhpW6cJb?si=BIPjQbhzSsGZhkxrD4azPw", color: "hover:text-green-500" },
+  { name: "SoundCloud", icon: FaSoundcloud, href: "https://soundcloud.com/vdjshaan", color: "hover:text-orange-500" },
+  // { name: "Amazon Music", icon: FaAmazon, href: "https://music.amazon.com/artists/B09WB5RTJY/vdj-shana", color: "hover:text-indigo-500" },
+  // { name: "Resso", icon: FaMusic, href: "https://m.resso.com/ZSdnuQxyo", color: "hover:text-pink-600" },
+  // { name: "Shazam", icon: FaBolt, href: "https://www.shazam.com/amp/track/619347994/let-me-down-x-rendu-kaadhal-lofi-mix", color: "hover:text-blue-600" },
 ];
 
 const Footer: React.FC = () => {

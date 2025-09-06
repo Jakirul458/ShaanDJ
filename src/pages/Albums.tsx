@@ -161,13 +161,13 @@ const Albums = () => {
                         <p className="text-sm">Duration: {album.duration}</p>
                         <p className="text-sm font-semibold">Price: ₹{displayPrice}</p>
                         <Button
-                          className="mt-3 w-full"
+                          className="bg-gradient-to-r from-primary to-secondary hover:from-primary/80 hover:to-secondary/80 text-lg px-6 py-4 animate-pulse-glow transform hover:scale-105 transition-all duration-300 w-full sm:w-auto"
                           onClick={() => createOrder(album._id)}
                           disabled={processingOrder === album._id}
                         >
                           {processingOrder === album._id
                             ? "Processing..."
-                            : `Buy for ₹${displayPrice}`}
+                            : `Download ₹${displayPrice}`}
                         </Button>
                       </CardContent>
                     </Card>

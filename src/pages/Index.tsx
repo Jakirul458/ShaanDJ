@@ -4,6 +4,7 @@ import FeaturesSection from "@/components/FeaturesSection";
 import EfficiencySection from "@/components/EfficiencySection";
 import FAQSection from "@/components/FAQSection";
 import Footer from "@/components/Footer";
+import AlbumSection from "@/components/AlbumSection";
 
 const Index = () => {
   return (
@@ -11,6 +12,7 @@ const Index = () => {
       <Header />
       <main>
         <HeroSection />
+        <AlbumSection />
         <FeaturesSection />
         <EfficiencySection />
         <FAQSection />

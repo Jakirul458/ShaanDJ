@@ -195,7 +195,11 @@ import YouTube from "react-youtube";
 import { Button } from "@/components/ui/button";
 import { Play, Music, Volume2, VolumeX } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
-import api from "@/lib/api"; // axios instance
+import api from "@/lib/api";
+
+import HeroImage from "@/asset/gurudongmar.jpg";
+
+
 
 interface Song {
   _id: string;
@@ -246,7 +250,7 @@ const HeroSection = () => {
 
       <div className="relative z-10 text-center px-4 max-w-6xl mx-auto">
         {/* Title */}
-        <h1 className="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-10 mb-6">
+        {/* <h1 className="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-10 mb-6">
           <img
             src="/logo.svg"
             alt="VDJ shaan Logo"
@@ -260,14 +264,22 @@ const HeroSection = () => {
             alt="VDJ shaan Logo"
             className="h-20 w-20 md:h-28 lg:h-48 object-contain animate-glow"
           />
-        </h1>
+        </h1> */}
+
+     <img
+  src={HeroImage}
+  alt="VDJ Shaan"
+  className="w-full h-[50vh] object-cover animate-glow rounded-2xl shadow-lg mt-16 md:mt-20"
+/>
+
+
 
         <h2 className="text-foreground text-lg md:text-2xl mt-2">
-          Your vibe, My mashup world
+          Your vibe, My DJ world
         </h2>
 
         <p className="text-base md:text-2xl text-muted-foreground mb-10 max-w-2xl mx-auto">
-          <span className="text-primary glow-purple">One channel, endless mashups</span> –{" "}
+          <span className="text-primary glow-purple">One channel and album, Endless DJ</span> –{" "}
           <span className="text-secondary glow-yellow">for your vibes and emotions</span>
         </p>
 
@@ -298,7 +310,7 @@ const HeroSection = () => {
         {/* Latest Songs */}
         <div className="mt-8 md:mt-12 max-w-5xl mx-auto">
           <h2 className="text-xl md:text-2xl font-bold text-center mb-6 text-foreground">
-            Latest Releases 
+            Latest Releases
           </h2>
 
           {loading ? (
